@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+<div>
+  <div class="container">
+    <h1>Postal Rate Calculator</h1>
+    <p><span class="glyphicon glyphicon-info-sign"></span> Use Node.js and Express to create a web application that determines the postage required for a single piece of retail first-class mail. You should have a form that allows a user to specify 1) the weight of the item and then 2) select one of the following types of mail:</p>
+      <ul>
+          <li>Letters (Stamped)</li>
+          <li>Letters (Metered)</li>
+          <li>Large Envelopes (Flats)</li>
+          <li>First-Class Package Service—Retail</li>
+      </ul>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Fill the following form</h3>
+      <form method="post" action=".">
+      <label>Weight oz.</label>
+        <div class="form-group">
+            <input class="form-control" type="number" name="weight">
+        </div>
+        <div class="form-group">
+        <label>Type</label>
+            <select class="form-control" name="type">
+                <option name="descType" value="1">Letters (Stamped)</option>
+                <option name="descType" value="2">Letters (Metered)</option>
+                <option name="descType" value="3">Large Envelopes (Flats)</option>
+                <option name="descType" value="4">First-Class Package Service—Retail</option>
+            </select>
+            <input type="submit" value="Submit">
+        </div>
+        </form>
+        <div>
+            <h2>The Rate is $<%= rate %></h2>
+        </div>
+    </div>
+</body>
+</html>
